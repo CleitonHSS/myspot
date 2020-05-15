@@ -66,6 +66,9 @@ const TextStyle = styled(TextType)`
   ${({opacity}) => opacity && `opacity: ${opacity}`};
   ${textTypeSolution}
   ${mixins.applyBreakpoints}
+  &:hover{
+    font-weight:${({hoverweight})=>hoverweight?hoverweight:'regular'};
+  }
 `;
 
 // Component Core
@@ -97,7 +100,8 @@ Text.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ]),
-  nowrap: PropTypes.string
+  nowrap: PropTypes.string,
+  hoverweight:PropTypes.string
 };
 
 Text.defaultProps = {
@@ -114,7 +118,9 @@ Text.defaultProps = {
   lineheight: '1em',
   letterSpacing: 'normal',
   whitespace: 'initial',
-  maxwidth: 'initial'
+  maxwidth: 'initial',
+  hoverweight:'regular'
+  
 };
 
 export {Text};

@@ -6,20 +6,24 @@ import Routes from './routes';
 import { Default } from './config/themes/Default';
 import configureStore from './configureStore';
 import history from './history'
+import hash from '../private/hash'
 
 const store = configureStore({});
 
-const App = () => (
+const App = () =>{
 
+  const token = hash;
+
+  return (
   <Provider store={store}>
       <Router basename="/myspot" history={history}>
       <ThemeProvider theme={Default}>
         <Fragment>
-            <Routes />
+            <Routes logged={token}/>
         </Fragment>
       </ThemeProvider>
       </Router>
   </Provider>
-);
+)};
 
 export default App;

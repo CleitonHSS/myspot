@@ -33,10 +33,12 @@ const CardStyled = styled.div`
 const Card = (props) =>{
     return (
 		<CardStyled {...props}>
-			<Img src="../../../assets/image/img_avatar.png" alt="Avatar"/>
+			<Container margin={[0]} padding={[0]} bgcolor="rgba(144,144,144, 0.4)">
+				<Img src={props.image} alt="Avatar"/>
+			</Container>
 			<Container>
 				<Text align="center" padding={props.singleCard?[16,24,8,24]:[8,8,2,8]} fontSize={props.singleCard?18:14}  >
-					{props.album ? props.album.albumName : ""}
+					{props.album}
 				</Text>
 				<Text align="center" padding={props.singleCard?[8,24,0,24]:[8,8,0,8]} fontSize={14} color="gray" >
 					{props.artist}
@@ -47,16 +49,20 @@ const Card = (props) =>{
 }
 
 Card.defaultProps = {
-	album: {},
+	album: "",
 	singleCard: false,
-	artist: ""
+	artist: "",
+	id:"",
+	image:""
   };
   
   // props object.
 Card.propTypes = {
-	album: PropTypes.object.isRequired,
+	album: PropTypes.string.isRequired,
 	singleCard: PropTypes.bool,
-	artist: PropTypes.string.isRequired
+	artist: PropTypes.string.isRequired,
+	id: PropTypes.string.isRequired,
+	image: PropTypes.string.isRequired
 }
  
 export default Card;

@@ -4,7 +4,7 @@ const isDev = process.env.NODE_ENV === 'development' || process.env.NODE_ENV ===
 const ENV = process.env.NODE_ENV || 'development';
 const HOST = process.env.HOST || '';
 const basename = process.env.PUBLIC_PATH || '';
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8111;
 
 const baseConfig = {
   all: {

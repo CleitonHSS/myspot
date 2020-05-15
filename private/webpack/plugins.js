@@ -132,7 +132,8 @@ const initialPlugins = [
       API_URL: JSON.stringify(env.API_URL),
       SPOTIFY_AUTHORIZE_URL: JSON.stringify(env.SPOTIFY_AUTHORIZE_URL),
       SPOTIFY_AUTH_SCOPES: JSON.stringify(env.SPOTIFY_AUTH_SCOPES),
-      SPOTIFY_CLIENT_ID: JSON.stringify(env.SPOTIFY_CLIENT_ID)
+      SPOTIFY_CLIENT_ID: JSON.stringify(env.SPOTIFY_CLIENT_ID),
+      SPOTIFY_CALLBACK_URL: JSON.stringify(env.SPOTIFY_CALLBACK_URL)
     },
     __ENV__: false,
     'global.__webpack_nonce__': JSON.stringify(WEBPACK_NONCE)

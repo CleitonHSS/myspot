@@ -5,32 +5,26 @@ const config = {
     env: process.env.NODE_ENV || 'development',
     API_URL: 'https://api.spotify.com/v1',
     SPOTIFY_AUTHORIZE_URL: 'https://accounts.spotify.com/authorize',
-    SPOTIFY_AUTH_SCOPES: 'user-read-recently-played user-top-read playlist-modify-public',
-    SPOTIFY_CLIENT_ID: '',
+    SPOTIFY_CLIENT_ID: '23be623bcea84e9ba076c85179cdb857',
+    SPOTIFY_AUTH_SCOPES:[
+      "user-top-read",
+      "user-read-currently-playing",
+      "user-read-playback-state",
+    ]
   },
   staging: {
-    API_URL: 'https://api.spotify.com/v1',
-    SPOTIFY_AUTHORIZE_URL: 'https://accounts.spotify.com/authorize',
-    SPOTIFY_AUTH_SCOPES: 'user-read-recently-played user-top-read playlist-modify-public',
-    SPOTIFY_CLIENT_ID: '',
+
+
   },
   localhml: {
-    API_URL: 'https://api.spotify.com/v1',
-    SPOTIFY_AUTHORIZE_URL: 'https://accounts.spotify.com/authorize',
-    SPOTIFY_AUTH_SCOPES: 'user-read-recently-played user-top-read playlist-modify-public',
-    SPOTIFY_CLIENT_ID: '',
+
   },
   development: {
-    API_URL: 'https://api.spotify.com/v1',
-    SPOTIFY_AUTHORIZE_URL: 'https://accounts.spotify.com/authorize',
-    SPOTIFY_AUTH_SCOPES: 'user-read-recently-played user-top-read playlist-modify-public',
-    SPOTIFY_CLIENT_ID: '',
+    SPOTIFY_CALLBACK_URL:"http://localhost:8111/"
   },
   production: {
-    API_URL: 'https://api.spotify.com/v1',
-    SPOTIFY_AUTHORIZE_URL: 'https://accounts.spotify.com/authorize',
-    SPOTIFY_AUTH_SCOPES: 'user-read-recently-played user-top-read playlist-modify-public',
     SPOTIFY_CLIENT_ID: '',
+    SPOTIFY_CALLBACK_URL:''
   }
 };
 

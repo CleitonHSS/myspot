@@ -54,26 +54,6 @@ const Default = {
     text:"#fafafa"
   },
   gradients: {
-    primary: {
-      from: '#d0b71d',
-      to: '#d82482'
-    },
-    secondary: {
-      from: '#ffff00',
-      to: '#00ceff'
-    },
-    success: {
-      from: '#A7E033',
-      to: '#07D1A0'
-    },
-    error: {
-      from: '#E02B72',
-      to: '#DE1F2D'
-    },
-    warning: {
-      from: '#ED327A',
-      to: '#FD700C'
-    },
     light: {
       from: '#fafafa',
       to: '#222222'

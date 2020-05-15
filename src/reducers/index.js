@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
-import products from './products';
+import albums from './albums';
+import tracks from './tracks';
 
 const Reducers = combineReducers({
-  products
+  albums,
+  tracks
 });
 
 export default Reducers;
