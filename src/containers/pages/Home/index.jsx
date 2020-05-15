@@ -48,6 +48,10 @@ const Index = ({history, ...props}) =>{
 		}
 	},[search]);
 
+	useEffect(()=>{
+			props.albums.items && setCards(cardsListBuilder(search));
+	},[props.albums.items]);
+
 	if(!props.logged){
 		return(<LoginPage/>)
 	}

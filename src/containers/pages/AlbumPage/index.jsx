@@ -47,7 +47,8 @@ const AlbumPage = ({history,...props}) =>{
 	},[id]);
 
 	useEffect(()=>{
-			setTracks(trackListBuilder(props.tracks));
+		props.tracks.items&&
+			setTracks(trackListBuilder(props.tracks))
 	},[props.tracks]);
 
     return (

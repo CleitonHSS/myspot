@@ -4,7 +4,7 @@ import {Text,Container, Link} from '../../../components/atoms';
 import {PageBase} from '../../../components/organisms';
 import { withRouter } from 'react-router';
 import SPOTIFY_LOGIN from '../../../../private/spotifyLoginPage'
-import styled from 'styled-components';
+import styled,{css}from 'styled-components';
 
 
 const LinkButton = styled.a`
@@ -36,13 +36,13 @@ const LoginPage = (props)=> {
 
     return (
       <PageBase>
-        <Container width="100%" height="100%" padding={[300,0]} alignitems="center" >
-           <Text type="strong" fontSize={40} width="auto" >Faça seu login com o Spotify!</Text>
+        <Container alignitems="center" breakpoints={{tablet: css`padding-right: 64px;`}}>
+           <Text type="strong" fontSize={40} margin={[72,16]}width="auto" >Faça seu login com o Spotify!</Text>
   
           <LinkButton  href={SPOTIFY_LOGIN}>
               LOGIN COM SPOTIFY
           </LinkButton>
-          </Container>
+        </Container>
       </PageBase>
     );
 }

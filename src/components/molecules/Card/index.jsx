@@ -13,7 +13,7 @@ const CardStyled = styled.div`
 	img{
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 		transition: 0.3s;
-		opacity:${({singleCard})=>singleCard?'100%':'75%'};;
+		opacity:${({singleCard})=>singleCard?'100%':'67%'};;
 		width:${({singleCard})=>singleCard?'300px':'170px'};
 		height:${({singleCard})=>singleCard?'300px':'170px'};
 	}
