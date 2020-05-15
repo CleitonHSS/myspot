@@ -18,7 +18,7 @@ const trackListBuilder = (tracks)=>{
 		var seconds = ((track.duration_ms % 60000) / 1000).toFixed(0);
 		var duration = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 		trackList.push(
-			<Track key={i} position={i} track={track} duration={duration}/>
+			<Track key={i+"-"+track.name+"-"+track.preview_url} position={i} track={track} duration={duration}/>
 		);i++;
 	});
 	return trackList;

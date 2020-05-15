@@ -10,7 +10,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case TRACKS_SUCCESS:
-      return {...state, ...action.data};
+      return {state, ...action.data};
     case TRACKS_ERROR:
       return {...state, ...action.data.items};
     default:
