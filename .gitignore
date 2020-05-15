@@ -4,7 +4,7 @@ dist/
 package-lock.json
 apache/
 .idea/
-env.config.js
+private/env.config.js
 
 ### Vim template
 # Swap
