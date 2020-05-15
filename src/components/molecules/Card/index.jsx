@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const CardStyled = styled.div`
 
 	width: ${({singleCard})=>singleCard?'300px':'170px'};
-	height:${({singleCard})=>singleCard?'555px':'255px'};
+	height:${({singleCard})=>singleCard?'400px':'255px'};
 	min-width:${({singleCard})=>singleCard?'300px':'170px'};
 
 	img{
@@ -27,6 +27,9 @@ const CardStyled = styled.div`
 
 	@media (max-width:768px) {
 		img {opacity:100%;}
+		margin:0;
+		padding:0;
+		align-self: center;
 	}
 `;
 

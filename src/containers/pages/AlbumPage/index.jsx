@@ -57,9 +57,9 @@ const AlbumPage = ({history,...props}) =>{
 					<Link as="button" fontSize={18} onClick={()=>{history.push("/",{search:search})}}>
 						<Icon fillColor="text" size={14} type="arrowLeft" margin={[0,4,0,-4]}/>{"Voltar"}
 					</Link>
-				<Container padding={[40,0]} direction="row">
-				<Card  singleCard id={id} album={album} artist={artist} image={image}/>
-					<Container padding={[0,0,0,64]} alignself="flex-start" >
+				<Container padding={[40,0]} breakpoints={{tablet: css`flex-direction:row;`}}>
+					<Card  singleCard id={id} album={album} artist={artist} image={image}/>
+					<Container padding={[0,16]} alignself="flex-start" breakpoints={{tablet: css`padding-left:64px;`}}>
 						{tracks}
 					</Container>
 				</Container>

@@ -13,7 +13,7 @@ const Index = ({history, ...props}) =>{
 
 	const handleCardClick = (album) =>{
 		history.push(
-			`/Album/${album.name.replace(/ /gi,"-")}/${album.artists[0].name.replace(/ /gi,"-")}`,
+			`/Album/${album.name.replace(/[ ():{}=?]/gi,"_")}/${album.artists[0].name.replace(/[ ():{}=?]/gi,"_")}`,
 			{id:album.id, album:album.name, artist:album.artists[0].name, image:album.images[1].url, search:search})
 	}
 
