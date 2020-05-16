@@ -15,7 +15,7 @@ https://developer.spotify.com/dashboard/applications
 ### Installing
 
 -  Update myspot private/_env.config.js
-Change private/_env.config.js to private/env.config.js and paste your Spotify Clioent ID from step 1 in the SPOTIFY_CLIENT_ID feild.
+Change private/_env.config.js to private/env.config.js and paste your Spotify Client ID from step 1 in the SPOTIFY_CLIENT_ID feild.
 ```
 const config = {
   all: {
