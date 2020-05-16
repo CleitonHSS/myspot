@@ -31,7 +31,7 @@ const config = {
   },
   
 ```
-- Install dependencies & run locally
+- Install dependencies
 
 ```
 npm install
