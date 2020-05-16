@@ -6,7 +6,10 @@ A React/ReduxWebpack App That Consumes Spotify's APIs
 
 - Register an application with Spotify
 Go to the Dashboard page at the Spotify Developer website, and click on ‘My New App.” Be sure to write down the Client ID from your application.
+https://developer.spotify.com/dashboard/applications
+
 - Clone repository
+
 - cd myspot
 
 ### Installing
