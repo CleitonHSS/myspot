@@ -18,29 +18,55 @@ const trackListBuilder = (tracks)=>{
 		var seconds = ((track.duration_ms % 60000) / 1000).toFixed(0);
 		var duration = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 		trackList.push(
-			<Track key={i+"-"+track.name+"-"+track.preview_url} position={i} track={track} duration={duration}/>
+			<Track key={i+"-"+track.name+"-"+track.preview_url} position={i} track={track} duration={duration} setOpened/>
 		);i++;
 	});
+	
 	return trackList;
 
 }
 
 const AlbumPage = ({history,...props}) =>{
 
+
+	const { id, album, artist, image, search } = history.location.state;
+	const [tracks,setTracks] = useState("");
+	const [openedPosition,setOpenedPosition] = useState(0);
+
+	const handleOpenedPosition = (openPosition) => {
+		setOpenedPosition(openPosition)
+	}
+
+	const trackListBuilder = (tracks)=>{
+		var i=1;
+		var trackList=[]
+		tracks.items.map((track)=>{
+			var minutes = Math.floor(track.duration_ms / 60000);
+			var seconds = ((track.duration_ms % 60000) / 1000).toFixed(0);
+			var duration = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+			trackList.push(
+				<Track 
+					key={i+"-"+track.name+"-"+track.preview_url}
+					position={i} track={track}
+					duration={duration}
+					getOpenedPosition={handleOpenedPosition}
+					openedPosition = {openedPosition}
+				/>
+			);i++;
+		});
+		
+		return trackList;
+	
+	}
+
 	if(!props.logged){
 		return(<LoginPage/>)
 	}
 
 	useEffect(()=>{
-		!history.location.state.id && history.push("/");
+		!history.location.state.id && history.push("/");id
+		console.log(!history.location.state.id);
 	},[]);
-
-	const id = history.location.state.id;
-	const album = history.location.state.album;
-	const artist = history.location.state.artist;
-	const image = history.location.state.image;
-	const search = history.location.state.search;
-	const [tracks,setTracks] = useState("");
 
 	useEffect(()=>{
 		props.tracksHandle(props.logged,id)
@@ -49,7 +75,8 @@ const AlbumPage = ({history,...props}) =>{
 	useEffect(()=>{
 		props.tracks.items&&
 			setTracks(trackListBuilder(props.tracks))
-	},[props.tracks]);
+			console.log(!props.tracks);
+	},[props.tracks, openedPosition]);
 
     return (
       	<PageBase >
@@ -79,8 +106,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default withRouter(
-		connect(
-			mapStateToProps,
-			mapDispatchToProps
-		)(AlbumPage)
-	);
+	connect(
+		mapStateToProps,
+		mapDispatchToProps
+	)(AlbumPage)
+);

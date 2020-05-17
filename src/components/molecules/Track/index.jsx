@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import {Container, Text, Link} from '../../atoms';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -13,25 +13,44 @@ const AudioPlayer = styled.audio`
 	
 `;
 
-const Track = ({position,track, duration}) =>{
+const Track = ({position,track, duration, getOpenedPosition, openedPosition}) =>{
 
-	const [playerDisplay, setPlayerDisplay] = useState(false);
 	const [audio,setAudio] = useState('')
-	const setPlay=(action)=>{action?audio.play():audio.pause()}
+	
+	const setPlay=(play)=>{
+		if(play){
+			audio.play()
+		}
+	}
 
+	const sendOpenedPosition = (position) =>{
+		getOpenedPosition(position);
+	}
+
+	useEffect(()=>{
+		if(openedPosition!== position && !audio.paused && !audio.ended && audio.currentTime>0){
+			audio.pause()
+		}
+	},[openedPosition]);
+
+	console.log('openedPosition',openedPosition)
 	return(
 		<Container padding={[0,0,24,0]}>
-			<Link as="button" width="100%"  onClick={()=>{setPlayerDisplay(!playerDisplay);setPlay(!playerDisplay)}}>
+			<Link as="button" width="100%"  onClick={()=>{
+				(openedPosition!==position)?sendOpenedPosition(position):sendOpenedPosition(0);
+				 setPlay(openedPosition!==position);
+				 ;}}
+			>
 				<Container direction="row" padding={[0,0,8,0]}>
 					<Container direction="row" justify="flex-start">
-						<Text hoverweight="bold" width="40px" padding={[0,24,0,0]} color="gray" fontWeight={playerDisplay?"Bold":"Regular"}>
+						<Text hoverweight="bold" width="40px" padding={[0,24,0,0]} color="gray" fontWeight={openedPosition===position?"Bold":"Regular"}>
 							{position}.
 						</Text>
-						<Text hoverweight="bold" fontWeight={playerDisplay?"Medium":"Regular"}>
+						<Text hoverweight="bold" fontWeight={openedPosition===position?"Medium":"Regular"}>
 							{track.name}
 						</Text>
 					</Container>
-					<Text hoverweight="bold" width="auto" color="gray"fontWeight={playerDisplay?"Medium":"Regular"}>
+					<Text hoverweight="bold" width="auto" color="gray"fontWeight={openedPosition===position?"Medium":"Regular"}>
 						{duration}
 					</Text>	
 				</Container>
@@ -39,7 +58,7 @@ const Track = ({position,track, duration}) =>{
 			<AudioPlayer
 				src={track.preview_url}
 				controls
-				playerDisplay={playerDisplay}
+				playerDisplay={openedPosition===position}
 				ref={(element) => { setAudio(element) }}
 			/>
 		</Container>

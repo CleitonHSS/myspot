@@ -62,10 +62,12 @@ const TextStyle = styled(TextType)`
   width: ${({width}) => width};
   max-width: ${({maxwidth}) => maxwidth};
   height: ${({height}) => height};
+  max-height: ${({maxheight}) => maxheight};
   white-space: ${ifProp('nowrap', 'nowrap', prop('whitespace'))};
   ${({opacity}) => opacity && `opacity: ${opacity}`};
   ${textTypeSolution}
   ${mixins.applyBreakpoints}
+  overflow: hidden;
   &:hover{
     font-weight:${({hoverweight})=>hoverweight?hoverweight:'regular'};
   }
@@ -119,6 +121,7 @@ Text.defaultProps = {
   letterSpacing: 'normal',
   whitespace: 'initial',
   maxwidth: 'initial',
+  maxheight: 'initial',
   hoverweight:'regular'
   
 };

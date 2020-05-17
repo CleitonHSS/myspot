@@ -1,7 +1,6 @@
 import React from 'react';
 import {Container, Img, Text, Link} from '../../atoms';
 import styled from 'styled-components';
-import { prop } from 'styled-tools';
 import PropTypes from 'prop-types';
 
 const CardStyled = styled.div`
@@ -40,7 +39,7 @@ const Card = (props) =>{
 				<Img src={props.image} alt="Avatar"/>
 			</Container>
 			<Container>
-				<Text align="center" padding={props.singleCard?[16,24,8,24]:[8,8,2,8]} fontSize={props.singleCard?18:14}  >
+				<Text align="center" maxheight={props.singleCard?"initial":"50px"} padding={props.singleCard?[16,24,8,24]:[8,8,2,8]} fontSize={props.singleCard?18:14}  >
 					{props.album}
 				</Text>
 				<Text align="center" padding={props.singleCard?[8,24,0,24]:[8,8,0,8]} fontSize={14} color="gray" >

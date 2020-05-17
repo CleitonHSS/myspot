@@ -12,8 +12,8 @@ export default (state = initialState, action) => {
     case TRACKS_SUCCESS:
       return {state, ...action.data};
     case TRACKS_ERROR:
-      return {...state, ...action.data.items};
+      return {state, ...action.data.items};
     default:
-      return {...state};
+      return {state};
   }
 };
