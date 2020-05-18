@@ -9,22 +9,6 @@ import {css} from 'styled-components';
 import {tracksHandle} from '../../../actions/tracks';
 import { LoginPage } from '..';
 
-	
-const trackListBuilder = (tracks)=>{
-	var i=1;
-	var trackList=[]
-	tracks.items.map((track)=>{
-		var minutes = Math.floor(track.duration_ms / 60000);
-		var seconds = ((track.duration_ms % 60000) / 1000).toFixed(0);
-		var duration = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
-		trackList.push(
-			<Track key={i+"-"+track.name+"-"+track.preview_url} position={i} track={track} duration={duration} setOpened/>
-		);i++;
-	});
-	
-	return trackList;
-
-}
 
 const AlbumPage = ({history,...props}) =>{
 

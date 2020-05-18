@@ -130,9 +130,11 @@ const initialPlugins = [
       PORT: JSON.stringify(process.env.PORT),
       API_BASE_URL_EXTERNAL: JSON.stringify(process.env.API_BASE_URL_EXTERNAL),
       API_URL: JSON.stringify(env.API_URL),
+      SPOTIFY_ACCOUNTS_URL: JSON.stringify(env.SPOTIFY_ACCOUNTS_URL),
       SPOTIFY_AUTHORIZE_URL: JSON.stringify(env.SPOTIFY_AUTHORIZE_URL),
       SPOTIFY_AUTH_SCOPES: JSON.stringify(env.SPOTIFY_AUTH_SCOPES),
       SPOTIFY_CLIENT_ID: JSON.stringify(env.SPOTIFY_CLIENT_ID),
+      SPOTIFY_CLIENT_SECRET: JSON.stringify(env.SPOTIFY_CLIENT_SECRET),
       SPOTIFY_CALLBACK_URL: JSON.stringify(env.SPOTIFY_CALLBACK_URL)
     },
     __ENV__: false,

@@ -4,12 +4,13 @@ const config = {
   all: {
     env: process.env.NODE_ENV || 'development',
     API_URL: 'https://api.spotify.com/v1',
+    SPOTIFY_ACCOUNTS_URL: 'https://accounts.spotify.com/api/token',
     SPOTIFY_AUTHORIZE_URL: 'https://accounts.spotify.com/authorize',
     SPOTIFY_CLIENT_ID: '',
+    SPOTIFY_CLIENT_SECRET:'',
     SPOTIFY_AUTH_SCOPES:[
-      "user-top-read",
-      "user-read-currently-playing",
-      "user-read-playback-state",
+      "user-read-private",
+      "user-read-email"
     ]
   },
   staging: {
