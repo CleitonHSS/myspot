@@ -1,13 +1,13 @@
 # myspot
 
 A React/ReduxWebpack App That Consumes Spotify's APIs
-I'm using React Hooks instead of using classes to build componets.
-Atomic design to organaze the project https://bradfrost.com/blog/post/atomic-web-design/.
-Webpack as bundler
-Redux as app state manager.
-Axios as a http client.
-Babel as JavaScript transcompilator.
-Cypress for unit tests 
+I'm using React Hooks instead of using classes to build componets,
+Atomic design to organaze the project https://bradfrost.com/blog/post/atomic-web-design/,
+Webpack as bundler,
+Redux as app state manager,
+Axios as a http client,
+Babel as JavaScript transcompilator,
+Cypress for unit tests.
 
 ## Getting Started
 
